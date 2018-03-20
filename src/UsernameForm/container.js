@@ -1,14 +1,13 @@
 import { connect } from 'react-redux'
 
-import Username from './component'
-
-import { setUsername } from '../ducks'
+import UsernameForm from './component'
+import { setUsername, getUsername } from '../ducks'
 
 export default connect(
   state => ({
-    username: state.username
+    username: getUsername(state)
   }),
   dispatch => ({
     handleUsernameChange: event => dispatch(setUsername(event.target.value))
   })
-)(Username)
+)(UsernameForm)

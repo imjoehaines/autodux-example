@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
 
-import Username from './component'
+import Email from './component'
+import { getEmail } from '../ducks'
 
 export default connect(
   state => ({
-    email: state.email
+    email: getEmail(state)
   })
-)(Username)
+)(Email)

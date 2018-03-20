@@ -1,14 +1,13 @@
 import { connect } from 'react-redux'
 
-import Email from './component'
-
-import { setEmail } from '../ducks'
+import EmailForm from './component'
+import { setEmail, getEmail } from '../ducks'
 
 export default connect(
   state => ({
-    email: state.email
+    email: getEmail(state)
   }),
   dispatch => ({
     handleEmailChange: event => dispatch(setEmail(event.target.value))
   })
-)(Email)
+)(EmailForm)

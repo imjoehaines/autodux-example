@@ -1,37 +1,22 @@
-const initialState = {
-  username: 'Anonymous',
-  email: 'anonymous@example.com'
-}
+import autodux from 'autodux'
 
-export default (state = initialState, { type, payload }) => {
-  switch (type) {
-    case SET_USERNAME:
-      return {
-        ...state,
-        username: payload
-      }
-
-    case SET_EMAIL:
-      return {
-        ...state,
-        email: payload
-      }
-
-    default:
-      return state
+const {
+  reducer,
+  actions: {
+    setUsername,
+    setEmail
+  },
+  selectors: {
+    getUsername,
+    getEmail
   }
-}
-
-const SET_USERNAME = 'SET_USERNAME'
-
-export const setUsername = username => ({
-  type: SET_USERNAME,
-  payload: username
+} = autodux({
+  initial: {
+    username: 'Anonymous',
+    email: 'anonymous@example.com'
+  }
 })
 
-const SET_EMAIL = 'SET_EMAIL'
+export default reducer
 
-export const setEmail = email => ({
-  type: SET_EMAIL,
-  payload: email
-})
+export { setUsername, setEmail, getUsername, getEmail }
