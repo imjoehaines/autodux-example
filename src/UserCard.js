@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import Username from './Username'
 import UsernameForm from './UsernameForm'
@@ -7,10 +7,10 @@ import Email from './Email'
 import EmailForm from './EmailForm'
 
 export default () =>
-  <div>
+  <Fragment>
     <Username />
     <UsernameForm />
 
     <Email />
     <EmailForm />
-  </div>
+  </Fragment>
